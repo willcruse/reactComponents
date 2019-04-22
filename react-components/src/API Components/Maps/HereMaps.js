@@ -33,7 +33,10 @@ class MapContainer extends React.Component {
           center: this.center,
       });
 
-      var ui = new window.H.ui.UI.createDefault(this.map, this.layers);
+      var ui = new window.H.ui.UI.createDefault(this.map, this.layers); //Add UI to the map
+      var events = new window.H.mapevents.MapEvents(this.map); //Event Manager for the Map
+      var behavior = new window.H.mapevents.Behavior(events);  //Pan + Zoom for the map
+
   }
   
   
