@@ -4,6 +4,8 @@ import React from 'react'
     Current Functionality of class:
         -Display a Map Centered on 1 location
         -Display Real-Time Traffic on the map
+        -Zoom
+        -Layer Manipulation
 */
 class MapContainer extends React.Component {
 
@@ -18,18 +20,20 @@ class MapContainer extends React.Component {
     componentDidMount() { //Once component has been created
       // Initialize the platform object
       this.platform = new window.H.service.Platform({
-        'app_id': 'YOUR_APP_KEY',
-        'app_code': 'YOUR_APP_CODE'
+        'app_id': 'YOUR_APP_ID_HERE', 
+        'app_code': 'YOUR_APP_CODE_HERE'
       });
       this.layers = this.platform.createDefaultLayers(); 
       var container = document.getElementById('here-map');
       this.map = new window.H.Map( //Create the map
         container,
         this.layers.normal.traffic, //Traffic layer
-        {
+        { //Additional Properties
           zoom: 10,
           center: this.center,
       });
+
+      var ui = new window.H.ui.UI.createDefault(this.map, this.layers);
   }
   
   
