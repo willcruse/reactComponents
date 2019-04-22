@@ -12,6 +12,7 @@
 
 ## Submitting Components
 To submit a component submit a pull request to **master** branch
+
 Within the pull request contain a description of the component to be included within the README
 
 ## Updating Components
