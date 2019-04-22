@@ -25,7 +25,7 @@ class MapContainer extends React.Component {
       var container = document.getElementById('here-map');
       this.map = new window.H.Map( //Create the map
         container,
-        this.layers.normal.map, //Traffic layer
+        this.layers.normal.traffic, //Traffic layer
         {
           zoom: 10,
           center: this.center,
