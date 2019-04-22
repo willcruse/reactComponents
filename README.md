@@ -1,7 +1,9 @@
 # React Components
 _A collection of ReactJS components to be used in hackathons_
 ## How to Use
-First ensure you have React installedTo test a component add it as the rendered component within the _index.js_ fileRun the app using the **npm start** command within the _react-components_ directoryComponents can then be viewed in browserOnce you've found the component you want copy the javascript file into your own src folder and import it into your app
+First ensure you have React installedTo test a component add it as the rendered component within the _index.js_ file
+Run the app using the **npm start** command within the _react-components_ directory
+Components can then be viewed in browserOnce you've found the component you want copy the javascript file into your own src folder and import it into your app
 ## Component Bundles
 
 **API Components**  
