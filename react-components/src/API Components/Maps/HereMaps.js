@@ -18,8 +18,8 @@ class MapContainer extends React.Component {
     componentDidMount() { //Once component has been created
       // Initialize the platform object
       this.platform = new window.H.service.Platform({
-        'app_id': 'a2XWloOg2k4hBBVyDMaT',
-        'app_code': 'R_5u1vpiXYQzBG5w-nIpSg'
+        'app_id': 'YOUR_APP_KEY',
+        'app_code': 'YOUR_APP_CODE'
       });
       this.layers = this.platform.createDefaultLayers(); 
       var container = document.getElementById('here-map');
