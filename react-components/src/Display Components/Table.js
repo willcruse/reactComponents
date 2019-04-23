@@ -1,25 +1,36 @@
 import React from 'react'
-
-class Table extends React.Component {
+/*
+    Table Class to display data in a table
+    Current Functionality of class:
+        -Display a header row
+        -Display n other normal rows
+*/
+class Table extends React.Component { 
 
     constructor (props) {
-            super(props);
+        super(props);
     }
 
     render() {
-        console.log(this.props);
         return (
-            <table id="table">
-                <TableHeader headers={this.props.headers} />
-                {this.props.items.map(item => {
-                    return <TableRow id={item.id} name={item.name} price={item.price} />
-                })
-                }
+            <table className="table" id="table">
+                <thead>
+                    <TableHeader headers={this.props.headers} />
+                </thead>
+                <tbody>
+                    {this.props.items.map(item => {
+                            return <TableRow items={item} />
+                        })
+                    }
+                </tbody>
             </table>
         )
     }
 }
 
+/*
+    Represents a single row within the table
+*/
 class TableRow extends React.Component {
     
     constructor(props) {
@@ -27,15 +38,24 @@ class TableRow extends React.Component {
     }
 
     render() {
-        
-        return (<tr>
-                    <td key={this.props.id}>{this.props.id}</td>
-                    <td key={this.props.name}>{this.props.name}</td>
-                    <td key={this.props.price}>{this.props.price}</td>
-                </tr>)
+        var keys = Object.keys(this.props.items);
+        var data = [];
+        keys.forEach(key => {
+            data.push(this.props.items[key]);
+        })
+        return (
+            <tr>
+            {data.map(item => {
+                return <td key={item}>{item}</td>
+                })
+            }
+            </tr>)
     }
 }
 
+/*
+    The header row for the table
+*/
 class TableHeader extends React.Component {
     constructor(props) {
         super(props);
@@ -43,14 +63,14 @@ class TableHeader extends React.Component {
 
     render() {
         return (
-            <th>
+            <tr>
                 {
                     this.props.headers.map( item => {
-                            return <td key={item}>{item}</td>
+                            return <th key={item}>{item}</th>
                         }
                     )
                 }
-            </th>
+            </tr>
         );
     }
 }
