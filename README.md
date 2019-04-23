@@ -19,6 +19,7 @@ Contains components which interface with other APIs such as Google Maps
 **Display Components**   
 
 Contains components which display data such as showing graphs
+
 **Input Components** 
 
 Contains components which take user input
